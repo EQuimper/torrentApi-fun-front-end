@@ -2,12 +2,11 @@ import React from 'react';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
-import FontIcon from 'material-ui/FontIcon';
-import SvgIconFace from 'material-ui/svg-icons/action/face';
 import MovieIcon from 'material-ui/svg-icons/av/movie';
 import AudioIcon from 'material-ui/svg-icons/image/audiotrack';
 import ApplicationIcon from 'material-ui/svg-icons/action/settings-applications';
 import GamesIcon from 'material-ui/svg-icons/av/games';
+import OtherIcon from 'material-ui/svg-icons/av/new-releases';
 
 const colors = [
   '#50514F',
@@ -27,6 +26,8 @@ const checkIcon = name => {
       return <ApplicationIcon style={styles.iconRight} />;
     case 'games':
       return <GamesIcon style={styles.iconRight} />;
+    case 'other':
+      return <OtherIcon style={styles.iconRight} />;
     default:
       return null;
   }
@@ -36,6 +37,7 @@ const CategoriesCard = ({ title, subCat, index }) => {
   return (
     <Card style={styles.cardView}>
       <CardHeader
+        titleStyle={{ fontWeight: 'bolder', color: 'white', backgroundColor: 'rgba(0, 0, 0, 0.15)' }}
         style={{ backgroundColor: colors[index] }}
         title="ThePirateBay"
         avatar="tpblogo.jpg"
@@ -59,6 +61,7 @@ const styles = {
   cardView: {
     display: 'flex',
     width: '32%',
+    height: '300px',
     marginTop: '2%',
     position: 'relative'
   },
@@ -82,7 +85,7 @@ const styles = {
   chipContainer: {
     display: 'flex',
     width: '90%',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   chip: {
     margin: 3
