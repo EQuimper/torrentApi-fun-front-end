@@ -32,26 +32,28 @@ const checkIcon = name => {
   }
 }
 
-const CategoriesCard = ({ title, subCat, index }) => (
-  <Card style={styles.cardView}>
-    <CardHeader
-      style={{ backgroundColor: colors[index] }}
-      subtitle="ThePirateBay"
-      avatar="tpblogo.jpg"
-    />
-    <div style={[styles.iconRight, styles.iconRightContainer]}>
-      {checkIcon(title)}
-    </div>
-    <CardTitle title={title.toUpperCase()} />
-    <CardText style={styles.chipContainer}>
-      {Object.keys(subCat).map((sCat, i) => (
-        <Chip backgroundColor={colors[i]} style={styles.chip} key={i}>
-          {sCat.toUpperCase()}
-        </Chip>
-      ))}
-    </CardText>
-  </Card>
-);
+const CategoriesCard = ({ title, subCat, index }) => {
+  return (
+    <Card style={styles.cardView}>
+      <CardHeader
+        style={{ backgroundColor: colors[index] }}
+        title="ThePirateBay"
+        avatar="tpblogo.jpg"
+      />
+      <div style={{ ...styles.iconRight, ...styles.iconRightContainer }}>
+        {checkIcon(title)}
+      </div>
+      <CardTitle title={title.toUpperCase()} />
+      <CardText style={styles.chipContainer}>
+        {Object.keys(subCat).map((sCat, i) => (
+          <Chip backgroundColor={colors[i]} style={styles.chip} key={i} labelColor="white">
+            {sCat.toUpperCase()}
+          </Chip>
+        ))}
+      </CardText>
+    </Card>
+  )
+}
 
 const styles = {
   cardView: {
@@ -61,14 +63,21 @@ const styles = {
     position: 'relative'
   },
   iconRightContainer: {
-    backgroundColor: 'pink'
+    backgroundColor: '#fff',
+    width: 50,
+    height: 50,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: '50%',
+    position: 'absolute',
+    top: '3%',
+    right: '3%',
+    boxShadow: 'rgba(0, 0, 0, 0.156863) 0px 3px 10px, rgba(0, 0, 0, 0.227451) 0px 3px 10px'
   },
   iconRight: {
-    position: 'absolute',
-    top: '5%',
-    right: '5%',
-    width: 40,
-    height: 40
+    width: 25,
+    height: 25
   },
   chipContainer: {
     display: 'flex',
@@ -76,8 +85,7 @@ const styles = {
     flexWrap: 'wrap'
   },
   chip: {
-    margin: 3,
-    color: '#fff'
+    margin: 3
   }
 }
 
