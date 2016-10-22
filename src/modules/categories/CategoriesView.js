@@ -15,7 +15,15 @@ class CategoriesView extends Component {
         <div className="categories-root">
           <div className="categories-container">
             {categorie.torrents.map((torrent, i) => (
-              <TorrentCard title={torrent.name} key={i} colorHeader={this.props.routeState.color} />
+              <TorrentCard
+                categorie={this.props.routeState.params}
+                seeds={torrent.seeds}
+                leeches={torrent.leeches}
+                url={torrent.url}
+                title={torrent.name}
+                colorHeader={this.props.routeState.color}
+                key={i}
+              />
             ))}
           </div>
         </div>

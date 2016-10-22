@@ -57,8 +57,7 @@ const CategoriesCard = ({ title, subCat, index }) => {
             onClick={() => browserHistory.push({
               pathname: `/categories/${title}${titleCase(sCat)}`,
               state: {
-                params: `${title}${titleCase(sCat)}`,
-                color: colors[i % colors.length]
+                params: `${title}${titleCase(sCat)}`
               }
             })}
             backgroundColor={colors[i % colors.length]}
@@ -80,7 +79,8 @@ const styles = {
     width: '32%',
     height: '300px',
     marginTop: '2%',
-    position: 'relative'
+    position: 'relative',
+    boxShadow: 'rgba(0, 0, 0, 0.156863) 0px 3px 10px, rgba(0, 0, 0, 0.227451) 0px 3px 10px'
   },
   iconRightContainer: {
     backgroundColor: '#fff',
