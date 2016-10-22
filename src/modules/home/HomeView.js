@@ -11,7 +11,7 @@ const HomeView = () => (
   <div className="home-root">
     <div className="home-card-container">
       {Object.keys(catObj).map((cat, i) => (
-        <CategoriesCard key={i} title={cat} subCat={catObj[cat]} />
+        <CategoriesCard key={i} title={cat} subCat={catObj[cat]} index={i} />
       ))}
     </div>
   </div>
