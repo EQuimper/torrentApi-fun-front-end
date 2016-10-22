@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TorrentCard from './TorrentCard';
+import { LoadingScreen } from '../../components';
 import './categories.css';
 
 class CategoriesView extends Component {
@@ -9,7 +10,7 @@ class CategoriesView extends Component {
   render() {
     const { isFetched, categorie, err } = this.props.categories;
     if (!isFetched) {
-      return <h1>Loading...</h1>;
+      return <LoadingScreen />;
     } else if (!err) {
       return (
         <div className="categories-root">

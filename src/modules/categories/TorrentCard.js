@@ -14,23 +14,17 @@ const truncateText = txt => {
   return txt;
 }
 
-const changeCat = cat => {
-  const catArr = cat.split('');
-  console.log(catArr);
-}
-
 const TorrentCard = ({ title, categorie, url, leeches, seeds }) => (
   <Card style={styles.cardView}>
     <CardHeader
       style={{ backgroundColor: 'rgb(0, 188, 212)' }}
-      subtitle={changeCat(categorie)}
       titleStyle={{ color: '#ffffff' }}
       title="ThePirateBay"
     />
     <Divider />
     <CardTitle title={truncateText(title)} style={{ padding: 20, height: 150, minHeight: 150, maxHeight: 150 }} />
     <CardText style={styles.chipContainer}>
-      <Chip backgroundColor="rgb(47, 235, 94)" labelColor="white">
+      <Chip backgroundColor="rgb(63, 208, 99)" labelColor="white">
         {seeds} Seeders
       </Chip>
       <Chip backgroundColor="rgb(230, 84, 79)" labelColor="white">
