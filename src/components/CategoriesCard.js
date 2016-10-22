@@ -1,4 +1,5 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
@@ -15,6 +16,10 @@ const colors = [
   '#247BA0',
   '#70C1B3',
 ];
+
+const titleCase = string => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 const checkIcon = name => {
   switch (name) {
@@ -48,7 +53,18 @@ const CategoriesCard = ({ title, subCat, index }) => {
       <CardTitle title={title.toUpperCase()} />
       <CardText style={styles.chipContainer}>
         {Object.keys(subCat).map((sCat, i) => (
-          <Chip backgroundColor={colors[i % colors.length]} style={styles.chip} key={i} labelColor="white">
+          <Chip
+            onClick={() => browserHistory.push({
+              pathname: `/categories/${title}${titleCase(sCat)}`,
+              state: {
+                params: `${title}${titleCase(sCat)}`
+              }
+            })}
+            backgroundColor={colors[i % colors.length]}
+            style={styles.chip}
+            key={i}
+            labelColor="white"
+          >
             {sCat.toUpperCase()}
           </Chip>
         ))}

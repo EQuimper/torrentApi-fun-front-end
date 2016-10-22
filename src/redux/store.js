@@ -3,11 +3,13 @@ import { browserHistory } from "react-router";
 import { applyMiddleware, compose, createStore } from "redux";
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
+import promiseMiddleware from "redux-promise-middleware";
 import rootReducer from "./reducers";
 
 const middleware = [
   createLogger(),
-  thunk
+  thunk,
+  promiseMiddleware()
 ];
 
 // Set var for all the middleware + redux chrome extension

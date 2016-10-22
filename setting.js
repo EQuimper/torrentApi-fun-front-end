@@ -1,5 +1,5 @@
 module.exports = {
-  ROOT_URL: 'https://equimper-torrent-api.herokuapp.com/',
+  ROOT_URL: 'https://crossorigin.me/https://equimper-torrent-api.herokuapp.com/',
   TPB_CATEGORIES: {
 		audio: {
 			music: 101,

@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { CategoriesCard } from '../../components';
 import './homeview.css';
 
 import settings from '../../../setting';
 
 const catObj = settings.TPB_CATEGORIES;
-console.log(catObj);
 
 const HomeView = () => (
   <div className="home-root">
