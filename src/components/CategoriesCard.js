@@ -46,7 +46,7 @@ const CategoriesCard = ({ title, subCat, index }) => {
       <CardTitle title={title.toUpperCase()} />
       <CardText style={styles.chipContainer}>
         {Object.keys(subCat).map((sCat, i) => (
-          <Chip backgroundColor={colors[i]} style={styles.chip} key={i} labelColor="white">
+          <Chip backgroundColor={colors[i % colors.length]} style={styles.chip} key={i} labelColor="white">
             {sCat.toUpperCase()}
           </Chip>
         ))}
@@ -73,7 +73,7 @@ const styles = {
     position: 'absolute',
     top: '3%',
     right: '3%',
-    boxShadow: 'rgba(0, 0, 0, 0.156863) 0px 3px 10px, rgba(0, 0, 0, 0.227451) 0px 3px 10px'
+    boxShadow: 'rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px'
   },
   iconRight: {
     width: 25,
